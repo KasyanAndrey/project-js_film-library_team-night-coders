@@ -1,0 +1,57 @@
+.nav-btn {
+  position: relative;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  padding: 20px 0;
+  color: $main-color-txt;
+  cursor: pointer;
+  &:not(:last-child) {
+    margin-right: 39px;
+  }
+
+  &:hover,
+  &:focus {
+    transition: color 0.2s linear;
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+
+  &.current{
+    color: $active-color-txt;
+  }
+  &::after {
+    content: '';
+    display: block;
+    background-color: $active-color-txt;
+    width: 0%;
+    height: 1px;
+    bottom: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.2s linear;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &:hover::after,
+  &:active::after {
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+  }
+
+}
+
+
+
+
+
+
+
