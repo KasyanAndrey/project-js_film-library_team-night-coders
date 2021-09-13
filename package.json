@@ -3,10 +3,12 @@
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://wlad-kryhin.github.io/project-JS-NightCoders",
+  "homepage": "https://KasyanAndrey.github.io/project-js_film-library_team-night-coders",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /project-JS-NightCoders/"
+    "build": "parcel build src/*.html --public-url /project-js_film-library_team-night-coders/",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,7 @@
     "@glidejs/glide": "^3.4.1",
     "animate.css": "^4.1.1",
     "basiclightbox": "^5.0.4",
+    "gh-pages": "^3.2.3",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
     "sweetalert2": "^11.1.0",
