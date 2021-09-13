@@ -8,7 +8,7 @@ import checkButtonsStatusQueue from './components/buttonsQueueStatus';
 import Spinner from './spinner';
 const localeStorageAPI = new LocaleStorageAPI();
 const trailerApp = new TrailerApp();
-const spinner = new Spinner()
+const spinner = new Spinner();
 
 const refs = {
   modalEl: document.querySelector('#modal__win'),
@@ -18,7 +18,6 @@ const refs = {
   modalContentEl: document.querySelector('.js-modal__content'),
   movieCardEl: document.querySelector('.js-movie-card'),
 
-  /* Миша */
   movieTitle: document.querySelector('[data-action="modal_movie_title"]'),
   movieCard: document.querySelector('.movie-card__image'),
   movieVoteAvarage: document.querySelector('[data-action="vote_average"]'),
@@ -53,26 +52,16 @@ document.addEventListener('click', onClickInNotModal);
 
 function showModal(event) {
   event.preventDefault();
-  spinner.active()
+  spinner.active();
   if (event.target.nodeName === 'IMG') {
     renderModal(event.target.id);
     setTimeout(() => {
-    onOpenModal()
-    spinner.hidden()
+      onOpenModal();
+      spinner.hidden();
     }, 300);
-    
   }
-  spinner.hidden()
-  }
-  // /* Миша */
-  // renderModal(event.target.id);
-  
-  // // renderMovieCard(event.target.id);
-  // setTimeout(() => {
-  //   onOpenModal()
-  //   spinner.hidden()
-  // }, 300);
-
+  spinner.hidden();
+}
 
 /* ----------------open/close---------------- */
 
@@ -136,8 +125,8 @@ async function renderModal(id) {
   refs.modalBtnAddWatched.id = movie.id;
   refs.movieBtnQueue.id = movie.id;
   refs.btnYoutube.id = movie.id;
-  
-  refs.btnYoutube.addEventListener('click', openTrailerBtn)
+
+  refs.btnYoutube.addEventListener('click', openTrailerBtn);
 
   checkButtonsStatusAdd();
   checkButtonsStatusQueue();
@@ -159,7 +148,7 @@ https://api.themoviedb.org/3/movie/${id}/videos?api_key=84867915c8b3aadc91d5efa8
 function openTrailerBtn(e) {
   e.preventDefault();
   onCloseModal();
-    refs.bodyEl.classList.add('hidden');
+  refs.bodyEl.classList.add('hidden');
   showTrailer(e.currentTarget.id);
 }
 
